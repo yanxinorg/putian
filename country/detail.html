@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/common.css">
+    <title>详情页</title>
+</head>
+<body>
+<div id="content" class="textures">
+    <div id="textures-title" class="textures-title"></div>
+    <div id="textures-trapper">
+        <div id="textures-text"></div>
+    </div>
+    <div id="textures-pager" class="textures-pager"></div>
+</div>
+<div id="swiper" class="swiper"></div>
+<div id="debug-message"></div>
+</body>
+<script type="application/javascript" src="../utility/assistant.js"></script>
+<script type="application/javascript" src="../module/swiper.module.js"></script>
+<script type="application/javascript" src="../module/textures.module.js"></script>
+<script type="application/javascript" src="../module/pager.module.js"></script>
+<script type="application/javascript" src="../module/transfer.module.js"></script>
+<script type="application/javascript">
+
+    function TransferComponent(textures) {
+        var that = this;
+
+        TransferModule.call(this);
+        // 属性
+        this.textures = textures;
+
+        // 方法
+        this.doBack = function () {
+            console.info(this.textures.backURL);
+            this.remove(this.fileName);
+            window.location.href = this.textures.backURL + this.package([]);
+        };
+
+        this.onKeyDown = function (event) {
+            var code = getKeyCode(event);
+            switch (code) {
+                case 'KEY_NUMBER1':
+                    that.toggle();
+                    return false;
+                case 'KEY_LEFT':
+                    that.textures.pager.turn(document.getElementById('textures-text'), document.getElementById('textures-pager'), -1);
+                    return false;
+                case 'KEY_RIGHT':
+                    that.textures.pager.turn(document.getElementById('textures-text'), document.getElementById('textures-pager'), 1);
+                    return false;
+                case 'KEY_PAGE_UP':
+                    that.textures.pager.turn(document.getElementById('textures-text'), document.getElementById('textures-pager'), -1);
+                    return false;
+                case 'KEY_PAGE_DOWN':
+                    that.textures.pager.turn(document.getElementById('textures-text'), document.getElementById('textures-pager'), 1);
+                    return false;
+                case 'KEY_EXIT':
+                case 'KEY_BACK':
+                    that.doBack();
+                    return false;
+                default:
+                    break;
+            }
+        };
+    }
+
+    window.onload = function () {
+        var
+            texturesModule = new TexturesModule(),
+            transferComponent = new TransferComponent(texturesModule);
+
+        texturesModule.init();
+        transferComponent.init();
+
+        var data = {
+            title: '测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试',
+            content: '测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试',
+            imgArr: [
+                {
+                    img: 'url(../images/chengxiang/1.jpg)'
+                },
+                {
+                    img: 'url(../images/chengxiang/2.jpg)'
+                },
+                {
+                    img: 'url(../images/chengxiang/3.jpg)'
+                }
+            ]
+        };
+        texturesModule.render(data);
+
+//        cmsApi.getListItemDetails(texturesComponent.id, function (response) {
+//            if (response.hasOwnProperty("code")) {
+//                if ("1" === response.code || 1 === response.code) {
+//                    texturesComponent.render(response);
+//                    /**
+//                     * 数据以异步形式加载
+//                     * 等待数据完全加载成功后再渲染
+//                     */
+//                    setTimeout(function () {
+//                        pagerComponent.setParameters();
+//                    }, 500);
+//                }
+//            }
+//        });
+
+        document.onkeydown = transferComponent.onKeyDown;
+    };
+</script>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/common.css">
+    <title>魅力乡镇</title>
+</head>
+<body>
+<div id="bar" class="bar"></div>
+<div id="menu"></div>
+<div id="swiper" class="swiper"></div>
+<div id="cursor"></div>
+</body>
+<script type="application/javascript" src="../utility/assistant.js"></script>
+<script type="application/javascript" src="../utility/async.js"></script>
+<script type="application/javascript" src="../utility/async.js"></script>
+<script type="application/javascript" src="../cms/cms.config.js"></script>
+<script type="application/javascript" src="../cms/cms.api.js"></script>
+<script type="application/javascript" src="../module/bar.module.js"></script>
+<script type="application/javascript" src="../wrapper/bar.wrapper.js"></script>
+<script type="application/javascript" src="../module/swiper.module.js"></script>
+<script type="application/javascript" src="../module/menu.module.js"></script>
+<script type="application/javascript" src="../module/cursor.module.js"></script>
+<script type="application/javascript" src="../module/transfer.module.js"></script>
+<script type="application/javascript" src="../wrapper/transfer.wrapper.js"></script>
+<script type="application/javascript" src="../module/weather.module.js"></script>
+<div id="debug-message"></div>
+<script type="application/javascript">
+    function MenuComponent() {
+        MenuModule.call(this);
+
+        this.menuPageArray = [{
+            itemsPerLine: [3, 3, 3],           // 每行所包含的元素数量
+            menuItemArray: [
+                {
+                    left: 56,
+                    top: 164,
+                    width: 283,
+                    height: 147,
+                    bgImageSrc: 'url(../images/town/index/1.jpg) no-repeat',
+                    resourceId: 0
+                },
+                {
+                    left: 345,
+                    top: 164,
+                    width: 283,
+                    height: 147,
+                    bgImageSrc: 'url(../images/town/index/2.jpg) no-repeat',
+                    resourceId: 0
+                },
+                {
+                    left: 635,
+                    top: 164,
+                    width: 283,
+                    height: 147,
+                    bgImageSrc: 'url(../images/town/index/3.jpg) no-repeat',
+                    resourceId: 0
+                },
+                {
+                    left: 56,
+                    top: 318,
+                    width: 283,
+                    height: 147,
+                    bgImageSrc: 'url(../images/town/index/4.jpg) no-repeat',
+                    resourceId: 0
+                },
+                {
+                    left: 345,
+                    top: 318,
+                    width: 283,
+                    height: 147,
+                    bgImageSrc: 'url(../images/town/index/5.jpg) no-repeat',
+                    resourceId: 0
+                },
+                {
+                    left: 635,
+                    top: 318,
+                    width: 283,
+                    height: 147,
+                    bgImageSrc: 'url(../images/town/index/6.jpg) no-repeat',
+                    resourceId: 0
+                },
+                {
+                    left: 56,
+                    top: 470,
+                    width: 283,
+                    height: 147,
+                    bgImageSrc: 'url(../images/town/index/7.jpg) no-repeat',
+                    resourceId: 0
+                },
+                {
+                    left: 345,
+                    top: 470,
+                    width: 573,
+                    height: 147,
+                    bgImageSrc: 'url(../images/town/index/8.jpg) no-repeat',
+                    resourceId: 0
+                },
+                {
+                    left: 925,
+                    top: 470,
+                    width: 304,
+                    height: 147,
+                    bgImageSrc: 'url(../images/town/index/9.jpg) no-repeat',
+                    resourceId: 0
+                }
+            ]
+        }];
+    }
+
+    function SwiperComponent() {
+        SwiperModule.call(this);
+
+        this.swiperTop = 164;
+        this.swiperLeft = 925;
+        this.swiperWidth = 304;
+        this.swiperHeight = 298;
+        this.album = [
+            {
+                img: 'url(../images/swiper-sample.jpg)'
+            }
+        ];
+    }
+
+    function CursorComponent(bar, menu, swiper) {
+        CursorModule.call(this);
+
+        // 属性
+        this.focusArea = 5;
+        this.bar = bar;
+        this.menu = menu;
+        this.swiper = swiper;
+        this.fileName = 'PG-ONE';
+    }
+
+    window.onload = function () {
+        var
+            barComponent = new BarComponent(),
+            menuComponent = new MenuComponent(),
+            swiperComponent = new SwiperComponent(),
+            cursorComponent = new CursorComponent(barComponent, menuComponent, swiperComponent),
+            transferComponent = new TransferComponent(cursorComponent);
+
+        transferComponent.init();
+        barComponent.init();
+        menuComponent.init();
+        swiperComponent.init();
+        cursorComponent.focusOn();
+
+        document.onkeydown = transferComponent.onKeyDown;
+    };
+</script>
+</html>

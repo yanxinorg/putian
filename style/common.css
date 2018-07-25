@@ -1,0 +1,338 @@
+
+body {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+    margin: 0;
+    background: url(../images/bg-img.png) no-repeat;
+    background-size: 100%;
+}
+
+/* ----  标题LOGO  ---- */
+.title-logo {
+    margin: 39px 0 0 50px;
+    width: 225px;
+    height: 40px;
+}
+
+/* ----  内容版块  ---- */
+.row {
+    margin: 0 auto;
+}
+
+/*.button-intro {*/
+/*position: absolute;*/
+/*right: 0;*/
+/*bottom: 0;*/
+/*width: 558px;*/
+/*height: 42px;*/
+/*margin: 0 70px 30px 0;*/
+/*background: url(../images/button-intro.png) no-repeat;*/
+/*}*/
+
+/* ----  栏目  ---- */
+.bar {
+    background: url(../images/bar/bar-bg.png) center no-repeat;
+    position: absolute;
+    top: 75px;
+    left: 56px;
+    width: 1172px;
+    height: 87px;
+    margin: 0 auto;
+}
+
+.bar-item-wrapper {
+    position: absolute;
+    top: 10px;
+    /*width: 154px;*/
+    height: 72px;
+}
+
+.bar-item {
+    font: 21px "Microsoft YaHei";
+    text-align: center;
+    line-height: 39px;
+    margin: 10px;
+    /*padding-top: 14px;*/
+}
+
+/* ----  菜单  ---- */
+.menu-item {
+    position: absolute;
+}
+
+/* ----  海报  ---- */
+.post-item {
+    position: absolute;
+}
+
+/* ----  滑块视图容器  ---- */
+.swiper {
+    /*background: url(../images/swiper-sample.jpg);*/
+    position: absolute;
+}
+
+.swiper-index-group {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.swiper-index {
+    margin: 5px;
+    color: white;
+    border: 3px solid white;
+    width: 25px;
+    height: 25px;
+    /*display: inline;*/
+}
+
+/* ----  公告栏  ---- */
+.notices_board {
+    position: absolute;
+    background: url(../images/list/bg-list-item.png);
+}
+
+.list_item {
+    position: absolute;
+    left: 10px;
+    /*width: 350px;*/
+    height: 30px;
+}
+
+.list_item_text {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    /*width: 340px;*/
+    height: 30px;
+    line-height: 30px;
+    font: 25px "Microsoft YaHei";
+    overflow: hidden;
+}
+
+.list-item-more {
+    background: url(../images/list/list-item-more.png) no-repeat;
+    width: 126px;
+    height: 24px;
+    position: absolute;
+    right: 35px;
+    bottom: 20px;
+}
+
+/* ----  按键  ---- */
+.button-item {
+    position: absolute;
+    margin: 1px 10px 20px 10px;
+}
+
+/* ----  更多内容  ---- */
+.more-page-content {
+    position: absolute;
+    line-height: 38px;
+    text-align: center;
+    color: #FFF;
+    font-size: 23px;
+}
+
+.more-page-item {
+    position: absolute;
+    width: 268px;
+    height: 202px;
+    visibility: visible;
+}
+
+.more-page-item-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 46px;
+    background-image: url(../images/more/more_page_item_text.png);
+    overflow: hidden;
+    opacity: 0.7;
+}
+
+.more-page-index-img {
+    position: absolute;
+    left: 518px;
+    top: 604px;
+    width: 239px;
+    height: 23px;
+    background-image: url(../images/more/more_page_index_img.png);
+}
+
+.more-page-index-text {
+    position: absolute;
+    left: 88px;
+    top: 0;
+    width: 60px;
+    height: 23px;
+    line-height: 23px;
+    color: #000;
+    font-size: 23px;
+    text-align: center;
+}
+
+.more-page-index {
+    position: absolute;
+    right: 30px;
+    top: 150px;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+/* ----  详情页 - 图文列表  ---- */
+.self-define-logo {
+    position: absolute;
+    left: 150px;
+    top: 70px;
+    width: 289px;
+    height: 84px;
+}
+
+.textures {
+    position: absolute;
+    left: 30px;
+    top: 170px;
+    width: 1198px;
+    height: 459px;
+    background: url(../images/detail/bg_content.png) no-repeat;
+}
+
+.textures-title {
+    position: absolute;
+    left: 300px;
+    top: -25px;
+    width: 592px;
+    height: 58px;
+    padding-top: 5px;
+    line-height: 40px;
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    background: url(../images/detail/bg_title.png) no-repeat;
+}
+
+.textures-title marquee {
+    height: 58px;
+}
+
+.textures-trapper {
+    position: absolute;
+    left: 630px;
+    top: 49px;
+    width: 520px;
+    height: 342px;
+    overflow: hidden;
+}
+
+.textures-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 520px;
+    line-height: 38px;
+    font-size: 25px;
+    color: #000000;
+}
+
+.textures-trapper-alone {
+    position: absolute;
+    left: 100px;
+    top: 49px;
+    width: 1000px;
+    height: 342px;
+    overflow: hidden;
+}
+
+.textures-text-alone {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1000px;
+    line-height: 38px;
+    font-size: 25px;
+    color: #000000;
+}
+
+.textures-pager {
+    position: absolute;
+    left: 600px;
+    top: 420px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ----  热键区  ---- */
+.hot {
+    position: absolute;
+}
+
+.main-hot-key {
+    font: 21px "Microsoft YaHei";
+    text-align: center;
+    line-height: 39px;
+    margin: 8px;
+}
+
+.sub-hot-key {
+    font: 20px "Microsoft YaHei";
+    text-align: center;
+    line-height: 39px;
+    margin: 5px;
+    background-color: #e3bd8d;
+}
+
+/* ----  底部栏  ---- */
+#weather-forecast {
+    position: absolute;
+    right: 0;
+    top: 0;
+    /*background: url(../images/weather_forecast.png) left no-repeat;*/
+    width: 400px;
+    height: 16px;
+    margin: 60px 30px 0 0;
+    font: 17px "Microsoft YaHei";
+    z-index: 9999;
+}
+
+#notification {
+    position: absolute;
+    left: 56px;
+    top: 164px;
+    width: 792px;
+    height: 32px;
+    color: #FFFFFF;
+    font-size: 17pt;
+    background-color: #888888;
+}
+
+/* ----  焦点区  ---- */
+#cursor {
+    position: absolute;
+    z-index: 9999;
+    opacity: 1;
+    margin: -3px;
+    border: 3px solid yellow;
+    visibility: hidden;
+}
+
+/* ----  调试区  ---- */
+#debug-message {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 1024px;
+    /*height: 500px;*/
+    word-wrap: break-word;
+    font-size: 10px;
+    z-index: 9999999;
+    background-color: azure;
+    overflow: scroll;
+    display: none;
+}
