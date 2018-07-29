@@ -37,7 +37,7 @@ function HotKeyModule() {
 
             //  设置附属键
             subHotKeyWrapper = document.createElement('div');
-            subHotKeyWrapper.className = 'sub-hot-key-wrapper';
+            subHotKeyWrapper.id = 'sub-hot-key-wrapper-' + i;
             subHotKeyWrapper.style.display = 'none';
             for (j = 0; j < this.hotKeyParams[i].countries.length; j++) {
                 subHotKey = document.createElement('div');
@@ -53,12 +53,11 @@ function HotKeyModule() {
     };
 
     this.focusOn = function () {
-        for (var k = 0, collection = document.getElementsByClassName('sub-hot-key-wrapper'); k < collection.length; k++) {
-            collection[k].style.display = 'none';
+        for (var k = 0; k < this.hotKeyParams.length; k++) {
+            document.getElementById('sub-hot-key-wrapper-' + k).style.display = 'none';
         }
-        var mainElement = document.getElementById('main-hot-key-' + this.mainFocusPos);
-        mainElement.nextElementSibling.style.display = 'block';
-
+        var mainElement = document.getElementById('sub-hot-key-wrapper-' + this.mainFocusPos);
+        mainElement.style.display = 'block';
 
         for (var i = 0, total = 0; i < this.mainFocusPos; i++) {
             total += this.hotKeyParams[i].countries.length;
